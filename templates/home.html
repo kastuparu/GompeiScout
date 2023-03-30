@@ -1,0 +1,315 @@
+{% extends "base.html" %}
+
+{% block content %}
+<html>
+<!---Match Data-->
+    <title>Match Data</title>
+  <style>
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {background-color: #f1f1f1} 
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  /* Change bg color of the dropdown btn when content is shown */
+  .dropdown:hover .dropbtn { 
+    background-color: #5070ff;
+  }
+  </style>
+  <div>
+    <h1>Match Data</h1>
+
+    <div class="dropdown">
+      <button class="dropbtn">Team Number</button>
+      <div class="dropdown-content">
+        <a href="#">1153</a>
+        <a href="#">178</a>
+        <a href="#">190</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Alliance Member</button>
+      <div class="dropdown-content">
+        <a href="#">Red 1</a>
+        <a href="#">Red 2</a>
+        <a href="#">Red 3</a>
+        <a href="#">Blue 1</a>
+        <a href="#">Blue 2</a>
+        <a href="#">Blue 3</a>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="matchNum">Match Number:</label>
+      <input type="number" class="form-control" id="matchNumId" name="matchNum">
+      <small id="matchNumId" class="form-text text-muted"></small>
+    </div>
+
+<!---Textbox Design-->
+<style>
+#txtId
+{
+    height: 250px;
+    width: 500px;
+    text-align: left;
+    font-size: 14pt;
+}
+
+</style>
+
+<!---Counter Function and Design-->
+<style>
+    #counterDiv {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    #counter {
+        font-size: 3em;
+        margin: 20px 0;
+    }
+
+    button {
+        font-size: 2em;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #6495ed;
+        color: white;
+        border: none;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #5070ff;
+    }
+</style>
+<script>
+    var counters = {
+        coneLows: 0,
+        coneMids: 0,
+        coneHighs: 0,
+        coneLowsT: 0,
+        coneMidsT: 0,
+        coneHighsT: 0,
+
+        cubeLows: 0,
+        cubeMids: 0,
+        cubeHighs: 0,
+        cubeLowsT: 0,
+        cubeMidsT: 0,
+        cubeHighsT: 0
+    };
+
+    function increment(counterName) {
+        counters[counterName]++;
+        document.getElementById(counterName).innerHTML = counters[counterName];
+    }
+
+    function decrement(counterName) {
+        counters[counterName]--;
+        document.getElementById(counterName).innerHTML = counters[counterName];
+    }
+</script>
+
+<!--- Autonomous Section --> 
+<hr class="dashed">
+<title>Autonomous Phase</title>
+<h1>Autonomous Section</h1>
+<table>
+<th>Autonomous Cones</th>
+<tr>
+<td>
+  <div id="counterDiv">
+    <button onclick="increment('coneLows')">+</button>
+    <p> Cone Low <span id="coneLows">0 </span></p>
+    <button onclick="decrement('coneLows')">-</button>
+    <p></p>
+  </div>
+</td>
+<td>
+  <div id="counterDiv">  
+    <button onclick="increment('coneMids')">+</button>
+    <p> Cone Mid <span id="coneMids">0 </span></p>
+    <button onclick="decrement('coneMids')">-</button>
+    <p></p>
+  </div>
+</td>
+<td>   
+  <div id="counterDiv">
+    <button onclick="increment('coneHighs')">+</button>
+    <p> Cone High <span id="coneHighs">0 </span></p>
+    <button onclick="decrement('coneHighs')">-</button>
+    <p></p>
+    </div>
+</td>
+</tr>
+<th>Autonomous Cubes</th>
+<tr>
+<td>
+<div id="counterDiv">
+  <button onclick="increment('cubeLows')">+</button>
+  <p> Cube Low <span id="cubeLows">0 </span></p>
+  <button onclick="decrement('cubeLows')">-</button>
+  <p></p>
+</div>
+</td>
+<td>
+<div id="counterDiv">  
+  <button onclick="increment('cubeMids')">+</button>
+  <p> Cube Mid <span id="cubeMids">0 </span></p>
+  <button onclick="decrement('cubeMids')">-</button>
+  <p></p>
+</div>  
+</td>
+<td>
+<div id="counterDiv">
+  <button onclick="increment('cubeHighs')">+</button>
+  <p> Cube High <span id="cubeHighs">0 </span></p>
+  <button onclick="decrement('cubeHighs')">-</button>
+  <p></p>
+</div>
+</td>
+</tr>
+</table>
+<p></p>
+<div>
+  <label>Mobility</label>
+  <input type="checkbox">
+  <p></p>
+  <label>Docked</label>
+  <input type="checkbox">
+  <p></p>
+  <label>Balanced</label>
+  <input type="checkbox">
+  <p></p>
+</div>
+<p></p>
+<div>
+  <p>Enter comments:</p>
+  <textarea cols="80" rows="6"></textarea>
+</div>
+
+<!--- Teleop Section -->
+<hr class="dashed">
+<title>Teleop Phase</title>
+<h1>Teleop Section</h1>
+<table>
+<th>Teleop Cones</th>
+<tr>
+<td>
+<div id="counterDiv">
+  <button onclick="increment('coneLowsT')">+</button>
+  <p> Cone Low <span id="coneLowsT">0 </span></p>
+  <button onclick="decrement('coneLowsT')">-</button>
+  <p></p>
+</div>
+</td>
+<td>
+<div id="counterDiv"> 
+  <button onclick="increment('coneMidsT')">+</button>
+  <p> Cone Mid <span id="coneMidsT">0 </span></p>
+  <button onclick="decrement('coneMidsT')">-</button>
+  <p></p>
+</div>
+</td>
+<td> 
+<div id="counterDiv">
+  <button onclick="increment('coneHighsT')">+</button>
+  <p> Cone High <span id="coneHighsT">0 </span></p>
+  <button onclick="decrement('coneHighsT')">-</button>
+  <p></p>
+</div>
+</td>
+</tr>
+<th>Teleop Cubes</th>
+<tr>
+<td>
+<div id="counterDiv">
+  <button onclick="increment('cubeLowsT')">+</button>
+  <p> Cube Low <span id="cubeLowsT">0 </span></p>
+  <button onclick="decrement('cubeLowsT')">-</button>
+  <p></p>
+</div>
+</td>
+<td>
+<div id="counterDiv">  
+  <button onclick="increment('cubeMidsT')">+</button>
+  <p> Cube Mid <span id="cubeMidsT">0 </span></p>
+  <button onclick="decrement('cubeMidsT')">-</button>
+  <p></p>
+</div>
+</td>
+<td> 
+<div id="counterDiv">
+  <button onclick="increment('cubeHighsT')">+</button>
+  <p> Cube High <span id="cubeHighsT">0 </span></p>
+  <button onclick="decrement('cubeHighsT')">-</button>
+  <p></p>
+</div>
+</td>
+</tr>
+</table>
+<p></p>
+<div>
+  <label>Pick Up From Floor</label>
+  <input type="checkbox">
+  <p></p>
+  <label>SHPS</label>
+  <input type="checkbox">
+  <p></p>
+  <label>DHPS</label>
+  <input type="checkbox">
+  <p></p>
+</div>
+<p></p>
+
+<!--- Analysis Section --->
+<hr class="dashed">
+<title>Autonomous Phase</title>
+<h1>Analysis Section</h1>
+<p>1. How would you describe their collecting/scoring mechanism? How does it affect their ability to score points?</p>
+<div>
+    <textarea cols="80" rows="6"></textarea>
+</div>
+<p>2. What is slowing them down?</p>     
+<div>
+    <textarea cols="80" rows="6"></textarea>
+</div>
+<p>3. What is their strategy(offensive, defensive, nothing) and how effective is it? Did they take every opportunity to score points?</p>     
+<div>
+    <textarea cols="80" rows="6"></textarea>
+</div>
+<p>4. How do they work with their alliance?</p>     
+<div>
+    <textarea cols="80" rows="6"></textarea>
+</div>
+
+  </body>
+</html>
+
+{% endblock %}
