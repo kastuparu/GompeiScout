@@ -43,6 +43,9 @@
         <a href="#">1153</a>
         <a href="#">178</a>
         <a href="#">190</a>
+        <a href="#">1100<a>
+        <a href="#">254</a>
+        <a href="#">6536</a>
       </div>
     </div>
 
@@ -73,6 +76,26 @@
     text-align: left;
     font-size: 14pt;
 }
+#divtxtboxId
+{
+    height: 250px;
+    width: 750px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+#checkboxId
+{
+    height: 180px;
+    width: 250px;
+    font-size: 1.5em;
+    margin: 20px 0;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
 </style>
 
@@ -86,6 +109,8 @@
         padding: 20px;
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        font-size: 1.5em;
+        margin: 20px 200;
     }
 
     #counter {
@@ -197,7 +222,7 @@
 </tr>
 </table>
 <p></p>
-<div>
+<div id="checkboxId">
   <label>Mobility</label>
   <input type="checkbox">
   <p></p>
@@ -209,7 +234,7 @@
   <p></p>
 </div>
 <p></p>
-<div>
+<div id="divtxtboxId">
   <p>Enter comments:</p>
   <textarea cols="80" rows="6"></textarea>
 </div>
@@ -275,8 +300,8 @@
 </tr>
 </table>
 <p></p>
-<div>
-  <label>Pick Up From Floor</label>
+<div id="checkboxId">
+  <label>Floor Pick Up</label>
   <input type="checkbox">
   <p></p>
   <label>SHPS</label>
@@ -293,21 +318,23 @@
 <title>Autonomous Phase</title>
 <h1>Analysis Section</h1>
 <p>1. How would you describe their collecting/scoring mechanism? How does it affect their ability to score points?</p>
-<div>
+<div id="divtxtboxId">
     <textarea cols="80" rows="6"></textarea>
 </div>
 <p>2. What is slowing them down?</p>     
-<div>
+<div id="divtxtboxId">
     <textarea cols="80" rows="6"></textarea>
 </div>
 <p>3. What is their strategy(offensive, defensive, nothing) and how effective is it? Did they take every opportunity to score points?</p>     
-<div>
+<div id="divtxtboxId">
     <textarea cols="80" rows="6"></textarea>
 </div>
 <p>4. How do they work with their alliance?</p>     
-<div>
+<div id="divtxtboxId">
     <textarea cols="80" rows="6"></textarea>
 </div>
+
+<button class="submit">Submit</button>
 
   </body>
 </html>
