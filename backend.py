@@ -10,5 +10,5 @@ def add_match(match):
 # TODO: method for getting all matches given a team
 # TODO: add indexing for team numbers
 
-if __name__ == "__main__":
-    add_match(json.load(open('match_template.json')))
+# if __name__ == "__main__":
+    # add_match(json.load(open('match_template.json')))

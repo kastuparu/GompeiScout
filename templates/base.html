@@ -1,24 +1,32 @@
 <!doctype html>
-<html>
-
+<html lang="en">
   <head>
-    <title>{{ title }}</title>
+    <meta charset="UTF-8">
+    <title>GompeiScout - {% block title %} {% endblock %}</title>
     <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
-
   <body>
+
+  <nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <ul class="navbar-nav">
+        {% for item in nav.top %}
+        <li class="nav-item {{ 'active' if item.is_active else '' }}">
+          <a class="nav-link" href="{{ item.url }}">{{ item.label }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+  </nav>
+
     <div class="container">
-      <h1>{{ title }}</h1>
-      <hr>
       {% block content %}
       {% endblock %}
     </div>
-    
+
+
     <script type="text/javascript" charset="utf8" src="https://code.jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvf08shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
     {% block scripts %}
     {% endblock %}
   </body>
