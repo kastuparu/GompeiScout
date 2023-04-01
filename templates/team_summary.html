@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block title %} {{ title }} {% endblock %}
+{% block content %}
+
+<br><h1>GompeiScout - {{ title }}</h1><br>
+<img src="{{ url_for('static', filename=summary.team_number + '.jpg') }} " alt="Image of {{ summary.team_number }}" width="50%">
+
+<br><br><h2>Autonomous</h2>
+<h4>Average Game Piece Values</h4>
+<table>
+    <tr>
+        <td style="width:10em;"><p>Cone Low</p></td>
+        <td style="width:10em;"><p>Cone Mid</p></td>
+        <td style="width:10em;"><p>Cone High</p></td>
+    </tr>
+    <tr>
+        <td><p>{{ summary.auto_cone_low }}</p></td>
+        <td><p>{{ summary.auto_cone_mid }}</p></td>
+        <td><p>{{ summary.auto_cone_high }}</p></td>
+    </tr>
+    <tr>
+        <td><p>Cube Low</p></td>
+        <td><p>Cube Mid</p></td>
+        <td><p>Cube High</p></td>
+    </tr>
+    <tr>
+        <td><p>{{ summary.auto_cube_low }}</p></td>
+        <td><p>{{ summary.auto_cube_mid }}</p></td>
+        <td><p>{{ summary.auto_cube_high }}</p></td>
+    </tr>
+</table>
+<h4>Percents</h4>
+<p>Mobility: {{ summary.auto_mobility }}</p>
+<p>Docked: {{ summary.auto_docked }}</p>
+<p>Docked and Engaged: {{ summary.auto_balanced }}</p>
+<h4>Comments</h4>
+{% for comment in summary.auto_comments %}
+<p>{{ comment }}</p>
+{% endfor %}
+
+<br><h2>Teleoperation</h2>
+<h4>Average Game Piece Values</h4>
+<table>
+    <tr>
+        <td style="width:10em;"><p>Cone Low</p></td>
+        <td style="width:10em;"><p>Cone Mid</p></td>
+        <td style="width:10em;"><p>Cone High</p></td>
+    </tr>
+    <tr>
+        <td><p>{{ summary.teleop_cone_low }}</p></td>
+        <td><p>{{ summary.teleop_cone_mid }}</p></td>
+        <td><p>{{ summary.teleop_cone_high }}</p></td>
+    </tr>
+    <tr>
+        <td><p>Cube Low</p></td>
+        <td><p>Cube Mid</p></td>
+        <td><p>Cube High</p></td>
+    </tr>
+    <tr>
+        <td><p>{{ summary.teleop_cube_low }}</p></td>
+        <td><p>{{ summary.teleop_cube_mid }}</p></td>
+        <td><p>{{ summary.teleop_cube_high }}</p></td>
+    </tr>
+</table>
+<h4>Percents</h4>
+<p>Floor Pickup: {{ summary.floor_pickup }}</p>
+<p>Human Player Station Pickup: {{ summary.hps_pickup }}</p>
+
+<h2>Match/Robot Analysis</h2>
+{% for comment in summary.analysis %}
+<p>{{ comment }}</p>
+{% endfor %}
+
+<p>If you need to see full match data, please contact Katy.</p>
+{% endblock %}

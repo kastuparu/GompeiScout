@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, url_for, redirect
 from flask_navigation import Navigation
-from forms import MatchForm
+from forms import MatchForm, SearchForm
 import backend
 import uuid
 
@@ -11,13 +11,15 @@ nav = Navigation(app)
 
 nav.Bar('top', [
     nav.Item('Home', 'home'),
-    nav.Item('Match Input', 'match_input')
+    nav.Item('Match Input', 'match_input'),
+    nav.Item('Team Summary Search', 'team_summary_search')
 ])
 
 
 @app.route('/')
 def root():
     return render_template('home.html', title="Home")
+
 
 @app.route('/home')
 def home():
@@ -31,8 +33,24 @@ def match_input():
     if request.method == 'POST':
         match_data = set_booleans(request.form.to_dict())
         match_data.update({'_id': str(uuid.uuid4())})
-        # backend.add_match(json_result)
+        backend.add_match(match_data)
         return redirect(url_for('match_input'))
+
+
+@app.route('/team_summary_search', methods=['GET', 'POST'])
+def team_summary_search():
+    if request.method == 'POST':
+        team_number = request.form['team_number']
+        return redirect(url_for('team_summary', team_number=team_number))
+    return render_template('team_summary_search.html', form=SearchForm(), title="Team Summary Search")
+
+
+@app.route('/team_summary/<team_number>', methods=['GET'])
+def team_summary(team_number):
+    data = backend.calculate_summary(team_number)
+    if data == 0:
+        return redirect(url_for('home'))
+    return render_template('team_summary.html', summary=data, title="Summary: " + str(team_number))
 
 
 def set_booleans(match_data):

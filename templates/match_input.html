@@ -4,8 +4,8 @@
 
 <form method="POST" action="/match_input">
     <br><h1>GompeiScout - {{ title }}</h1><br>
-    <p>{{ form.quals_number.label }}: {{ form.quals_number(style="width:5%;") }}</p>
-    <p>{{ form.team_number.label }}: {{ form.team_number(style="width:5%;") }}</p>
+    <p>{{ form.quals_number.label }}: {{ form.quals_number(style="width:5em;") }}</p>
+    <p>{{ form.team_number.label }}: {{ form.team_number(style="width:5em;") }}</p>
     <p>{{ form.scouter_name.label }}: {{ form.scouter_name() }}</p>
     <h2>Autonomous</h2>
     <table>
@@ -15,9 +15,9 @@
             <td><p>{{ form.auto_cone_high.label }}</p></td>
         </tr>
         <tr>
-            <td><p>{{ form.auto_cone_low(style="width:25%;") }}</p></td>
-            <td><p>{{ form.auto_cone_mid(style="width:25%;") }}</p></td>
-            <td><p>{{ form.auto_cone_high(style="width:25%;") }}</p></td>
+            <td><p>{{ form.auto_cone_low(style="width:5em;") }}</p></td>
+            <td><p>{{ form.auto_cone_mid(style="width:5em;") }}</p></td>
+            <td><p>{{ form.auto_cone_high(style="width:5em;") }}</p></td>
         </tr>
         <tr>
             <td><p>{{ form.auto_cube_low.label }}</p></td>
@@ -25,9 +25,9 @@
             <td><p>{{ form.auto_cube_high.label }}</p></td>
         </tr>
         <tr>
-            <td><p>{{ form.auto_cube_low(style="width:25%;") }}</p></td>
-            <td><p>{{ form.auto_cube_mid(style="width:25%;") }}</p></td>
-            <td><p>{{ form.auto_cube_high(style="width:25%;") }}</p></td>
+            <td><p>{{ form.auto_cube_low(style="width:5em;") }}</p></td>
+            <td><p>{{ form.auto_cube_mid(style="width:5em;") }}</p></td>
+            <td><p>{{ form.auto_cube_high(style="width:5em;") }}</p></td>
         </tr>
     </table>
     <p>{{ form.auto_mobility() }} {{ form.auto_mobility.label }}</p>
@@ -43,9 +43,9 @@
             <td><p>{{ form.teleop_cone_high.label }}</p></td>
         </tr>
         <tr>
-            <td><p>{{ form.teleop_cone_low(style="width:25%;") }}</p></td>
-            <td><p>{{ form.teleop_cone_mid(style="width:25%;") }}</p></td>
-            <td><p>{{ form.teleop_cone_high(style="width:25%;") }}</p></td>
+            <td><p>{{ form.teleop_cone_low(style="width:5em;") }}</p></td>
+            <td><p>{{ form.teleop_cone_mid(style="width:5em;") }}</p></td>
+            <td><p>{{ form.teleop_cone_high(style="width:5em;") }}</p></td>
         </tr>
         <tr>
             <td><p>{{ form.teleop_cube_low.label }}</p></td>
@@ -53,9 +53,9 @@
             <td><p>{{ form.teleop_cube_high.label }}</p></td>
         </tr>
         <tr>
-            <td><p>{{ form.teleop_cube_low(style="width:25%;") }}</p></td>
-            <td><p>{{ form.teleop_cube_mid(style="width:25%;") }}</p></td>
-            <td><p>{{ form.teleop_cube_high(style="width:25%;") }}</p></td>
+            <td><p>{{ form.teleop_cube_low(style="width:5em;") }}</p></td>
+            <td><p>{{ form.teleop_cube_mid(style="width:5em;") }}</p></td>
+            <td><p>{{ form.teleop_cube_high(style="width:5em;") }}</p></td>
         </tr>
     </table>
     <p>{{ form.floor_pickup() }} {{ form.floor_pickup.label }}</p>

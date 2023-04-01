@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} {{ title }} {% endblock %}
+{% block content %}
+
+<form method="POST" action="/team_summary_search">
+    <br><h1>GompeiScout - {{ title }}</h1><br>
+    <p>{{ form.team_number.label }}: {{ form.team_number(style="width:5em;") }}</p>
+    <p><input type="submit" value="Submit"></p>
+</form>
+
+{% endblock %}

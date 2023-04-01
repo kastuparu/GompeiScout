@@ -6,7 +6,7 @@ from wtforms.validators import InputRequired, NumberRange
 class MatchForm(FlaskForm):
     quals_number = IntegerField("Qualification Match #", validators=[InputRequired(), NumberRange(min=1, max=100)])
     scouter_name = StringField("Scouter Name", validators=[InputRequired()])
-    team_number = IntegerField("Team #", validators=[InputRequired(), NumberRange(min=1, max=1000)])
+    team_number = IntegerField("Team #", validators=[InputRequired(), NumberRange(min=1, max=10000)])
 
     auto_cone_low = IntegerField("Cone Low", default=0, validators=[InputRequired(), NumberRange(min=0, max=9)])
     auto_cone_mid = IntegerField("Cone Mid", default=0, validators=[InputRequired(), NumberRange(min=0, max=9)])
@@ -29,3 +29,7 @@ class MatchForm(FlaskForm):
     hps_pickup = BooleanField("Human Player Station Pickup?", default=False)
 
     analysis = TextAreaField("Focus on the following questions when providing your analysis.")
+
+
+class SearchForm(FlaskForm):
+    team_number = IntegerField("Enter team #", validators=[InputRequired(), NumberRange(min=1, max=10000)])
