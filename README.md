@@ -1,12 +1,18 @@
 # GompeiScout
 
+GompeiScout is a scouting software for FRC 190.
+Developed by Katy Stuparu, 2023.
 
-<Jess Elmhurst, elmhuje713>
 
-base.html is essentially the same as from the
-https://blog.ruanbekker.com/blog/2022/05/31/python-flask-forms-with-jinja-templating/
-tutorial, but I include a version of it here in templates. 
-
-The templates folder needs to be downloaded along with the scoutApp.py file.
-
-To run, type 'python3 scoutApp.py' in the terminal.
+To run:
+1. Make sure you have Python and pip installed.
+2. Download GompeiScout.
+``` 
+cd GompeiScout
+```
+3. Optional: set up a virtual environment.
+4. Run the following commands:
+```
+pip install -r requirements.txt
+python3 scout_app.py
+```

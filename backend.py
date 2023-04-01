@@ -1,5 +1,4 @@
 from pymongo import MongoClient
-import json
 
 
 def __get_database():
