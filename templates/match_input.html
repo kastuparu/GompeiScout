@@ -3,73 +3,107 @@
 {% block content %}
 
 <form method="POST" action="/match_input">
-    <br><h1>GompeiScout - {{ title }}</h1><br>
-    <p>{{ form.quals_number.label }}: {{ form.quals_number(style="width:5em;") }}</p>
-    <p>{{ form.team_number.label }}: {{ form.team_number(style="width:5em;") }}</p>
-    <p>{{ form.scouter_name.label }}: {{ form.scouter_name() }}</p>
-    <h2>Autonomous</h2>
-    <table>
-        <tr>
-            <td><p>{{ form.auto_cone_low.label }}</p></td>
-            <td><p>{{ form.auto_cone_mid.label }}</p></td>
-            <td><p>{{ form.auto_cone_high.label }}</p></td>
-        </tr>
-        <tr>
-            <td><p>{{ form.auto_cone_low(style="width:5em;") }}</p></td>
-            <td><p>{{ form.auto_cone_mid(style="width:5em;") }}</p></td>
-            <td><p>{{ form.auto_cone_high(style="width:5em;") }}</p></td>
-        </tr>
-        <tr>
-            <td><p>{{ form.auto_cube_low.label }}</p></td>
-            <td><p>{{ form.auto_cube_mid.label }}</p></td>
-            <td><p>{{ form.auto_cube_high.label }}</p></td>
-        </tr>
-        <tr>
-            <td><p>{{ form.auto_cube_low(style="width:5em;") }}</p></td>
-            <td><p>{{ form.auto_cube_mid(style="width:5em;") }}</p></td>
-            <td><p>{{ form.auto_cube_high(style="width:5em;") }}</p></td>
-        </tr>
-    </table>
-    <p>{{ form.auto_mobility() }} {{ form.auto_mobility.label }}</p>
-    <p>{{ form.auto_docked() }} {{ form.auto_docked.label }}</p>
-    <p>{{ form.auto_balanced() }} {{ form.auto_balanced.label }}</p>
-    <p>{{ form.auto_comments.label }}:<br>{{ form.auto_comments(rows=5, cols=50) }}</p>
+    <br>
+    <div class="container bg-light">
+        <br>
+        <h1>GompeiScout - {{ title }}</h1>
+        <br>
+    </div>
+    <br>
+    <div class="container bg-light">
+        <br>
+        <p>{{ form.quals_number.label }}: {{ form.quals_number(style="width:5em;") }}</p>
+        <p>{{ form.team_number.label }}: {{ form.team_number(style="width:5em;") }}</p>
+        <p>{{ form.scouter_name.label }}: {{ form.scouter_name() }}</p>
+        <br>
+    </div>
 
-    <h2>Teleoperation</h2>
-    <table>
-        <tr>
-            <td><p>{{ form.teleop_cone_low.label }}</p></td>
-            <td><p>{{ form.teleop_cone_mid.label }}</p></td>
-            <td><p>{{ form.teleop_cone_high.label }}</p></td>
-        </tr>
-        <tr>
-            <td><p>{{ form.teleop_cone_low(style="width:5em;") }}</p></td>
-            <td><p>{{ form.teleop_cone_mid(style="width:5em;") }}</p></td>
-            <td><p>{{ form.teleop_cone_high(style="width:5em;") }}</p></td>
-        </tr>
-        <tr>
-            <td><p>{{ form.teleop_cube_low.label }}</p></td>
-            <td><p>{{ form.teleop_cube_mid.label }}</p></td>
-            <td><p>{{ form.teleop_cube_high.label }}</p></td>
-        </tr>
-        <tr>
-            <td><p>{{ form.teleop_cube_low(style="width:5em;") }}</p></td>
-            <td><p>{{ form.teleop_cube_mid(style="width:5em;") }}</p></td>
-            <td><p>{{ form.teleop_cube_high(style="width:5em;") }}</p></td>
-        </tr>
-    </table>
-    <p>{{ form.floor_pickup() }} {{ form.floor_pickup.label }}</p>
-    <p>{{ form.hps_pickup() }} {{ form.hps_pickup.label }}</p>
+    <br>
 
-    <h2>Match/Robot Analysis</h2>
-    <p>{{ form.analysis.label }}</p>
-    <p>1. Describe their collecting/scoring mechanism. How does it affect their ability to score points?</p>
-    <p>2. What is slowing them down? (ex. collecting cubes from floor, lining up to score high, defended)</p>
-    <p>3. What is their strategy (offensive, defensive, nothing) and how effective is it in scoring points?</p>
-    <p>4. How do they work with their alliance?</p>
-    <p>{{ form.analysis(rows=10, cols=50) }}</p>
+    <div class="container bg-light">
+        <br>
+        <h2>Autonomous</h2>
+        <table>
+            <tr>
+                <td><p>{{ form.auto_cone_low.label }}</p></td>
+                <td><p>{{ form.auto_cone_mid.label }}</p></td>
+                <td><p>{{ form.auto_cone_high.label }}</p></td>
+            </tr>
+            <tr>
+                <td><p>{{ form.auto_cone_low(style="width:5em;") }}</p></td>
+                <td><p>{{ form.auto_cone_mid(style="width:5em;") }}</p></td>
+                <td><p>{{ form.auto_cone_high(style="width:5em;") }}</p></td>
+            </tr>
+            <tr>
+                <td><p>{{ form.auto_cube_low.label }}</p></td>
+                <td><p>{{ form.auto_cube_mid.label }}</p></td>
+                <td><p>{{ form.auto_cube_high.label }}</p></td>
+            </tr>
+            <tr>
+                <td><p>{{ form.auto_cube_low(style="width:5em;") }}</p></td>
+                <td><p>{{ form.auto_cube_mid(style="width:5em;") }}</p></td>
+                <td><p>{{ form.auto_cube_high(style="width:5em;") }}</p></td>
+            </tr>
+        </table>
+        <p>{{ form.auto_mobility() }} {{ form.auto_mobility.label }}</p>
+        <p>{{ form.auto_docked() }} {{ form.auto_docked.label }}</p>
+        <p>{{ form.auto_balanced() }} {{ form.auto_balanced.label }}</p>
+        <p>{{ form.auto_comments.label }}:<br>{{ form.auto_comments(rows=5, cols=50) }}</p>
+        <br>
+    </div>
 
-    <p><input type="submit" value="Submit"></p>
+    <br>
+
+    <div class="container bg-light">
+        <br>
+        <h2>Teleoperation</h2>
+        <table>
+            <tr>
+                <td><p>{{ form.teleop_cone_low.label }}</p></td>
+                <td><p>{{ form.teleop_cone_mid.label }}</p></td>
+                <td><p>{{ form.teleop_cone_high.label }}</p></td>
+            </tr>
+            <tr>
+                <td><p>{{ form.teleop_cone_low(style="width:5em;") }}</p></td>
+                <td><p>{{ form.teleop_cone_mid(style="width:5em;") }}</p></td>
+                <td><p>{{ form.teleop_cone_high(style="width:5em;") }}</p></td>
+            </tr>
+            <tr>
+                <td><p>{{ form.teleop_cube_low.label }}</p></td>
+                <td><p>{{ form.teleop_cube_mid.label }}</p></td>
+                <td><p>{{ form.teleop_cube_high.label }}</p></td>
+            </tr>
+            <tr>
+                <td><p>{{ form.teleop_cube_low(style="width:5em;") }}</p></td>
+                <td><p>{{ form.teleop_cube_mid(style="width:5em;") }}</p></td>
+                <td><p>{{ form.teleop_cube_high(style="width:5em;") }}</p></td>
+            </tr>
+        </table>
+        <p>{{ form.floor_pickup() }} {{ form.floor_pickup.label }}</p>
+        <p>{{ form.hps_pickup() }} {{ form.hps_pickup.label }}</p>
+        <br>
+    </div>
+
+    <br>
+
+    <div class="container bg-light">
+        <br>
+        <h2>Match/Robot Analysis</h2>
+        <p>{{ form.summary.label }}</p>
+        <p>{{ form.summary(rows=2, cols=50) }}</p>
+        <br>
+        <p>{{ form.analysis.label }}</p>
+        <p>1. Describe the robot's collecting/scoring mechanism. How does it affect the team's ability to score points?</p>
+        <p>2. Describe the driver's ability. How does it affect the team's ability to score points?</p>
+        <p>3. What is slowing them down? (ex. collecting cubes from floor, lining up to score high, defended)</p>
+        <p>4. What is their strategy (offensive, defensive, nothing) and how effective is it in scoring points?</p>
+        <p>5. How well do they work with their alliance? Discuss endgame here.</p>
+        <p>{{ form.analysis(rows=10, cols=50) }}</p>
+        <br>
+        <p><input type="submit" value="Submit"></p>
+        <br>
+    </div>
+    <br>
 </form>
 
 {% endblock %}

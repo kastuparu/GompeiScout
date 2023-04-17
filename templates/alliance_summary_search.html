@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %} {{ title }} {% endblock %}
+{% block content %}
+
+<form method="POST" action="/alliance_summary_search">
+    <br>
+    <div class="container bg-light">
+        <br>
+        <h1>GompeiScout - {{ title }}</h1>
+        <br>
+    </div>
+    <br>
+    <div class="container bg-light">
+        <br>
+        <table>
+            <tr>
+                <td style="width:10em;"><p>{{ form.red_1.label }}: {{ form.red_1(style="width:5em;") }}</p></td>
+                <td style="width:10em;"><p>{{ form.red_2.label }}: {{ form.red_2(style="width:5em;") }}</p></td>
+                <td style="width:10em;"><p>{{ form.red_3.label }}: {{ form.red_3(style="width:5em;") }}</p></td>
+            </tr>
+            <tr>
+                <td><p>{{ form.blue_1.label }}: {{ form.blue_1(style="width:5em;") }}</p></td>
+                <td><p>{{ form.blue_2.label }}: {{ form.blue_2(style="width:5em;") }}</p></td>
+                <td><p>{{ form.blue_3.label }}: {{ form.blue_3(style="width:5em;") }}</p></td>
+            </tr>
+        </table>
+        <br>
+        <p><input type="submit" value="Submit"></p>
+        <br>
+    </div>
+    <br>
+</form>
+
+{% endblock %}

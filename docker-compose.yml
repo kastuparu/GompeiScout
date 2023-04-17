@@ -1,0 +1,51 @@
+version: '3.8'
+services:
+
+  flask:
+    build: .
+    image: flask
+    container_name: flask
+    restart: unless-stopped
+    ports:
+      - 5000:5000
+    environment:
+      APP_ENV: "prod"
+      APP_DEBUG: "False"
+      APP_PORT: 5000
+      MONGODB_DATABASE: db
+      MONGODB_USERNAME: flaskuser
+      MONGODB_PASSWORD: fire23
+      MONGODB_HOSTNAME: mongodb
+    volumes:
+      - .:/usr/src/app/
+    depends_on:
+      - mongodb
+    networks:
+      - frontend
+      - backend
+
+  mongodb:
+    image: mongo:4.0.8
+    container_name: mongodb
+    restart: unless-stopped
+    command: mongod --auth
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 9c7bf5a803e948029e8923e84afd7356
+      MONGO_INITDB_DATABASE: flaskdb
+      MONGODB_DATA_DIR: /data/db
+      MONDODB_LOG_DIR: /dev/null
+    volumes:
+      - mongodbdata:/data/db
+    networks:
+      - backend
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+
+volumes:
+  mongodbdata:
+    driver: local

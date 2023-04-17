@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+{% block title %} {{ title }} {% endblock %}
+{% block content %}
+
+<br>
+<div class="container bg-light">
+    <br>
+    <h1>GompeiScout - {{ title }}</h1>
+    <br>
+</div>
+<br>
+
+<div class="container bg-light" style="overflow:hidden;">
+    <br>
+    <h2>Red 1: <a href="/team_summary/{{ summary.r1.team_number }}">{{ summary.r1.team_number }}</a></h2>
+    <br>
+    <div class="container" style="float:left; width: 35%;">
+        <img src="{{ url_for('static', filename=summary.r1.team_number + '.jpg') }} " alt="Image of {{ summary.r1.team_number }}"
+             style="max-width:100%; height:auto">
+        <p></p>
+    </div>
+    <div class="container" style="float:left; width:60%;">
+        <table>
+            <tr>
+                <td style="width:10em;"><p>Auto Cone Average</p></td>
+                <td style="width:10em;"><p>Auto Cube Average</p></td>
+                <td style="width:10em;"><p>Auto Balanced</p></td>
+                <td style="width:10em;"><p>Teleop Cone Average</p></td>
+                <td style="width:10em;"><p>Teleop Cube Average</p></td>
+            </tr>
+            <tr>
+                <td><p>{{ summary.r1.auto_cone_average }}</p></td>
+                <td><p>{{ summary.r1.auto_cube_average }}</p></td>
+                <td><p>{{ summary.r1.auto_balanced }}</p></td>
+                <td><p>{{ summary.r1.teleop_cone_average }}</p></td>
+                <td><p>{{ summary.r1.teleop_cube_average }}</p></td>
+            </tr>
+        </table>
+        {% for summary in summary.r1.summary %}
+        <p>{{ summary }}</p>
+        {% endfor %}
+    </div>
+    <br>
+</div>
+
+<br>
+
+<div class="container bg-light" style="overflow:hidden;">
+    <br>
+    <h2>Red 2: <a href="/team_summary/{{ summary.r2.team_number }}">{{ summary.r2.team_number }}</a></h2>
+    <br>
+    <div class="container" style="float:left; width: 35%;">
+        <img src="{{ url_for('static', filename=summary.r2.team_number + '.jpg') }} " alt="Image of {{ summary.r2.team_number }}"
+             style="max-width:100%; height:auto">
+        <p></p>
+    </div>
+    <div class="container" style="float:left; width:60%;">
+        <table>
+            <tr>
+                <td style="width:10em;"><p>Auto Cone Average</p></td>
+                <td style="width:10em;"><p>Auto Cube Average</p></td>
+                <td style="width:10em;"><p>Auto Balanced</p></td>
+                <td style="width:10em;"><p>Teleop Cone Average</p></td>
+                <td style="width:10em;"><p>Teleop Cube Average</p></td>
+            </tr>
+            <tr>
+                <td><p>{{ summary.r2.auto_cone_average }}</p></td>
+                <td><p>{{ summary.r2.auto_cube_average }}</p></td>
+                <td><p>{{ summary.r2.auto_balanced }}</p></td>
+                <td><p>{{ summary.r2.teleop_cone_average }}</p></td>
+                <td><p>{{ summary.r2.teleop_cube_average }}</p></td>
+            </tr>
+        </table>
+        {% for summary in summary.r2.summary %}
+        <p>{{ summary }}</p>
+        {% endfor %}
+    </div>
+    <br>
+</div>
+
+<br>
+
+<div class="container bg-light" style="overflow:hidden;">
+    <br>
+    <h2>Red 3: <a href="/team_summary/{{ summary.r3.team_number }}">{{ summary.r3.team_number }}</a></h2>
+    <br>
+    <div class="container" style="float:left; width: 35%;">
+        <img src="{{ url_for('static', filename=summary.r3.team_number + '.jpg') }} " alt="Image of {{ summary.r3.team_number }}"
+             style="max-width:100%; height:auto">
+        <p></p>
+    </div>
+    <div class="container" style="float:left; width:60%;">
+        <table>
+            <tr>
+                <td style="width:10em;"><p>Auto Cone Average</p></td>
+                <td style="width:10em;"><p>Auto Cube Average</p></td>
+                <td style="width:10em;"><p>Auto Balanced</p></td>
+                <td style="width:10em;"><p>Teleop Cone Average</p></td>
+                <td style="width:10em;"><p>Teleop Cube Average</p></td>
+            </tr>
+            <tr>
+                <td><p>{{ summary.r3.auto_cone_average }}</p></td>
+                <td><p>{{ summary.r3.auto_cube_average }}</p></td>
+                <td><p>{{ summary.r3.auto_balanced }}</p></td>
+                <td><p>{{ summary.r3.teleop_cone_average }}</p></td>
+                <td><p>{{ summary.r3.teleop_cube_average }}</p></td>
+            </tr>
+        </table>
+        {% for summary in summary.r3.summary %}
+        <p>{{ summary }}</p>
+        {% endfor %}
+    </div>
+    <br>
+</div>
+
+<br>
+
+<div class="container bg-light" style="overflow:hidden;">
+    <br>
+    <h2>Blue 1: <a href="/team_summary/{{ summary.b1.team_number }}">{{ summary.b1.team_number }}</a></h2>
+    <br>
+    <div class="container" style="float:left; width: 35%;">
+        <img src="{{ url_for('static', filename=summary.b1.team_number + '.jpg') }} " alt="Image of {{ summary.b1.team_number }}"
+             style="max-width:100%; height:auto">
+        <p></p>
+    </div>
+    <div class="container" style="float:left; width:60%;">
+        <table>
+            <tr>
+                <td style="width:10em;"><p>Auto Cone Average</p></td>
+                <td style="width:10em;"><p>Auto Cube Average</p></td>
+                <td style="width:10em;"><p>Auto Balanced</p></td>
+                <td style="width:10em;"><p>Teleop Cone Average</p></td>
+                <td style="width:10em;"><p>Teleop Cube Average</p></td>
+            </tr>
+            <tr>
+                <td><p>{{ summary.b1.auto_cone_average }}</p></td>
+                <td><p>{{ summary.b1.auto_cube_average }}</p></td>
+                <td><p>{{ summary.b1.auto_balanced }}</p></td>
+                <td><p>{{ summary.b1.teleop_cone_average }}</p></td>
+                <td><p>{{ summary.b1.teleop_cube_average }}</p></td>
+            </tr>
+        </table>
+        {% for summary in summary.b1.summary %}
+        <p>{{ summary }}</p>
+        {% endfor %}
+    </div>
+    <br>
+</div>
+
+<br>
+
+<div class="container bg-light" style="overflow:hidden;">
+    <br>
+    <h2>Blue 2: <a href="/team_summary/{{ summary.b2.team_number }}">{{ summary.b2.team_number }}</a></h2>
+    <br>
+    <div class="container" style="float:left; width: 35%;">
+        <img src="{{ url_for('static', filename=summary.b2.team_number + '.jpg') }} " alt="Image of {{ summary.b2.team_number }}"
+             style="max-width:100%; height:auto">
+        <p></p>
+    </div>
+    <div class="container" style="float:left; width:60%;">
+        <table>
+            <tr>
+                <td style="width:10em;"><p>Auto Cone Average</p></td>
+                <td style="width:10em;"><p>Auto Cube Average</p></td>
+                <td style="width:10em;"><p>Auto Balanced</p></td>
+                <td style="width:10em;"><p>Teleop Cone Average</p></td>
+                <td style="width:10em;"><p>Teleop Cube Average</p></td>
+            </tr>
+            <tr>
+                <td><p>{{ summary.b2.auto_cone_average }}</p></td>
+                <td><p>{{ summary.b2.auto_cube_average }}</p></td>
+                <td><p>{{ summary.b2.auto_balanced }}</p></td>
+                <td><p>{{ summary.b2.teleop_cone_average }}</p></td>
+                <td><p>{{ summary.b2.teleop_cube_average }}</p></td>
+            </tr>
+        </table>
+        {% for summary in summary.b2.summary %}
+        <p>{{ summary }}</p>
+        {% endfor %}
+    </div>
+    <br>
+</div>
+
+<br>
+
+<div class="container bg-light" style="overflow:hidden;">
+    <br>
+    <h2>Blue 3: <a href="/team_summary/{{ summary.b3.team_number }}">{{ summary.b3.team_number }}</a></h2>
+    <br>
+    <div class="container" style="float:left; width: 35%;">
+        <img src="{{ url_for('static', filename=summary.b3.team_number + '.jpg') }} " alt="Image of {{ summary.b3.team_number }}"
+             style="max-width:100%; height:auto">
+        <p></p>
+    </div>
+    <div class="container" style="float:left; width:60%;">
+        <table>
+            <tr>
+                <td style="width:10em;"><p>Auto Cone Average</p></td>
+                <td style="width:10em;"><p>Auto Cube Average</p></td>
+                <td style="width:10em;"><p>Auto Balanced</p></td>
+                <td style="width:10em;"><p>Teleop Cone Average</p></td>
+                <td style="width:10em;"><p>Teleop Cube Average</p></td>
+            </tr>
+            <tr>
+                <td><p>{{ summary.b3.auto_cone_average }}</p></td>
+                <td><p>{{ summary.b3.auto_cube_average }}</p></td>
+                <td><p>{{ summary.b3.auto_balanced }}</p></td>
+                <td><p>{{ summary.b3.teleop_cone_average }}</p></td>
+                <td><p>{{ summary.b3.teleop_cube_average }}</p></td>
+            </tr>
+        </table>
+        {% for summary in summary.b3.summary %}
+        <p>{{ summary }}</p>
+        {% endfor %}
+    </div>
+    <br>
+</div>
+
+<br>
+
+{% endblock %}

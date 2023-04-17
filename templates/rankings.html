@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %} {{ title }} {% endblock %}
+{% block content %}
+
+<br>
+<div class="container bg-light">
+    <br>
+    <h1>GompeiScout - {{ title }}</h1>
+    <br>
+</div>
+<br>
+
+<div class="container bg-light">
+    <br>
+    <h2>How Rankings are Calculated</h2>
+    <p>The quantitative data rankings are calculated based on how many points the team would have scored for their
+        alliance on average during a match. See the
+        <a href="https://firstfrc.blob.core.windows.net/frc2023/Manual/2023FRCGameManual.pdf" target="_blank">
+            FRC 2023 game manual</a> for all point values.</p>
+    <p>The auto points are calculated based on the points for game pieces scored (3 pts for low, 4 pts for mid, 6 pts
+        for high) as well as the points for mobility (3 pts), docking (8 pts), and balancing (12 pts).</p>
+    <p>The teleop points are calculated just based on the points for game pieces scored (2 pts for low, 3 pts for mid,
+        5 pts for high). Note: this does not include links (5 pts each), endgame (2 pts for parked, 6 pts for docked,
+        10 pts for balanced), supercharged nodes (3 pts each), and penalties (5 pts for foul, 12 pts for tech foul).</p>
+    <p>These rankings help us compare teams who perform similarly in terms of autos and scoring in teleop. This is not
+        intended to be a pick list; the qualitative data gathered should be used in conjunction with this to make a
+        pick list.</p>
+
+    <br>
+</div>
+
+<br>
+
+<div class="container bg-light">
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" style="width:10em; text-align:center;"><p>Team Number</p></th>
+                <th scope="col" style="width:10em; text-align:center;"><p>Total Points</p></th>
+                <th scope="col" style="width:10em; text-align:center;"><p>Auto Points</p></th>
+                <th scope="col" style="width:10em; text-align:center;"><p>Teleop Points</p></th>
+                <th scope="col" style="text-align:center;"><p>Recent Analysis</p></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for team in rankings %}
+            <tr>
+                <td style="text-align:center;"><a href="team_summary/{{ team.team_number }}"><p>{{ team.team_number }}</p></a></td>
+                <td style="text-align:center;"><p>{{ team.total_points }}</p></td>
+                <td style="text-align:center;"><p>{{ team.auto_points }}</p></td>
+                <td style="text-align:center;"><p>{{ team.teleop_points }}</p></td>
+                <td><p>{{ team.recent_analysis }}</p></td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+</div>
+
+<br>
+
+{% endblock %}

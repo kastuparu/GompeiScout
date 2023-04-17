@@ -2,7 +2,7 @@
 {% block title %} {{ title }} {% endblock %}
 {% block content %}
 
-<form method="POST" action="/team_summary_search">
+<form method="POST" action="/driver_input">
     <br>
     <div class="container bg-light">
         <br>
@@ -12,7 +12,11 @@
     <br>
     <div class="container bg-light">
         <br>
+        <p>{{ form.quals_number.label }}: {{ form.quals_number(style="width:5em;") }}</p>
         <p>{{ form.team_number.label }}: {{ form.team_number(style="width:5em;") }}</p>
+        <br>
+        <p>{{ form.feedback.label }}</p>
+        <p>{{ form.feedback(rows=5, cols=50) }}</p>
         <br>
         <p><input type="submit" value="Submit"></p>
         <br>
