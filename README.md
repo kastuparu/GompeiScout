@@ -67,35 +67,36 @@ containers with Docker Desktop.
 ```
 docker-compose up
 ```
-4. If you would like to start from scratch, build the Docker containers.
+4. If you would like to start from scratch:
+   1. Build the Docker containers.
 ```
 docker-compose up -d --build
 ```
-5. Now, you will need to configure the database to work with GompeiScout.
-   1. Start an interactive shell on the ```mongodb``` container. Then, log in as ```root``` (the password is in 
-   ```docker-compose.yml``` under ```MONGO_INITDB_ROOT_PASSWORD```).
-   ```
-   $ docker exec -it mongodb bin/bash
-   root@c84d9a66f7e3:/ mongo -u root -p
-   ```
-   2. Create a Mongo user that Flask can use. 
-   ```
-   mongodb> db.createUser({user: 'flaskuser', pwd: 'fire23', roles: [{role: 'readWrite', db: 'flaskdb'}]})
-   ```
-   3. Create the ```matches``` and ```driver_feedback``` collections.
-   ```
-   mongodb> db.createCollection('matches')
-   mongodb> db.createCollection('driver_feedback')
-   ```
-   4. Create search indices for the keyword ```team_number``` in the ```matches``` and ```driver_feedback``` 
-   collections. This allows for search queries by team number to be executed faster and more efficiently.
-   ```
-   mongodb> db.matches.createIndex({'team_number': -1})
-   mongodb> db.driver_feedback.createIndex({'team_number': -1})
-   ```
-   5. Log out of ```root``` and try logging into ```flaskuser``` to make sure it is working.
-   ```
-   mongodb> exit
-   root@c84d9a66f7e3:/ mongo -u flaskuser -p fire23 --authenticationDatabase flaskdb
-   ```
+   2. Now, you will need to configure the database to work with GompeiScout.
+     1. Start an interactive shell on the ```mongodb``` container. Then, log in as ```root``` (the password is in 
+     ```docker-compose.yml``` under ```MONGO_INITDB_ROOT_PASSWORD```).
+     ```
+     $ docker exec -it mongodb bin/bash
+     root@c84d9a66f7e3:/ mongo -u root -p
+     ```
+     2. Create a Mongo user that Flask can use. 
+     ```
+     mongodb> db.createUser({user: 'flaskuser', pwd: 'fire23', roles: [{role: 'readWrite', db: 'flaskdb'}]})
+     ```
+     3. Create the ```matches``` and ```driver_feedback``` collections.
+     ```
+     mongodb> db.createCollection('matches')
+     mongodb> db.createCollection('driver_feedback')
+     ```
+     4. Create search indices for the keyword ```team_number``` in the ```matches``` and ```driver_feedback``` 
+     collections. This allows for search queries by team number to be executed faster and more efficiently.
+     ```
+     mongodb> db.matches.createIndex({'team_number': -1})
+     mongodb> db.driver_feedback.createIndex({'team_number': -1})
+     ```
+     5. Log out of ```root``` and try logging into ```flaskuser``` to make sure it is working.
+     ```
+     mongodb> exit
+     root@c84d9a66f7e3:/ mongo -u flaskuser -p fire23 --authenticationDatabase flaskdb
+     ```
 6. You can access the website from [localhost:5000](localhost:5000).
