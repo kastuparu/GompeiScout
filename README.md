@@ -65,7 +65,7 @@ containers with Docker Desktop.
 2. Download the GompeiScout code, and ```cd``` into the GompeiScout directory.
 3. Build the Docker containers.
     ```
-    docker-compose up -d --build
+    $ docker-compose up -d --build
     ```
 4. Now, you will need to configure the database to work with GompeiScout. 
    1. Start an interactive shell on the ```mongodb``` container. Then, log in as ```root``` (the password is in 
