@@ -1,6 +1,6 @@
 # GompeiScout
 
-GompeiScout is a scouting software for [FRC 190](https://wp.wpi.edu/frc190/).
+GompeiScout, named after [WPI's](https://www.wpi.edu/) mascot Gompei the Goat, is a scouting software for [FRC 190](https://wp.wpi.edu/frc190/).
 Developed by Katy Stuparu, 2023.
 
 ## What it does
@@ -62,11 +62,16 @@ running.
 ## To run GompeiScout on your machine:
 1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop). You will be able to manage or stop Docker
 containers with Docker Desktop.
-2. Download the GompeiScout code, and inside the GompeiScout directory, build the Docker containers.
+2. Download the GompeiScout code, and ```cd``` into the GompeiScout directory.
+3. If you would like to use existing images from Docker Hub, pull the images and run them.
+```
+docker-compose up
+```
+4. If you would like to start from scratch, build the Docker containers.
 ```
 docker-compose up -d --build
 ```
-3. Now, you will need to configure the database to work with GompeiScout.
+5. Now, you will need to configure the database to work with GompeiScout.
    1. Start an interactive shell on the ```mongodb``` container. Then, log in as ```root``` (the password is in 
    ```docker-compose.yml``` under ```MONGO_INITDB_ROOT_PASSWORD```).
    ```
@@ -93,3 +98,4 @@ docker-compose up -d --build
    mongodb> exit
    root@c84d9a66f7e3:/ mongo -u flaskuser -p fire23 --authenticationDatabase flaskdb
    ```
+6. You can access the website from [localhost:5000](localhost:5000).
